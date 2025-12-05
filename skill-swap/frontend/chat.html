@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Chat — Skill Swap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">Skill Swap Chat</div>
+
+    <div class="actions">
+      <button id="themeToggle" class="btn small ghost">Theme</button>
+      <a href="dashboard.html" class="btn small">Back</a>
+      <button id="btnLogout" class="btn small">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- LEFT: RECENT CONVERSATIONS -->
+    <section class="chat-sidebar card section">
+      <h3>Conversations</h3>
+      <div id="conversations" class="conversation-list"></div>
+    </section>
+
+    <!-- RIGHT: CHAT WINDOW -->
+    <aside class="chat-box card">
+      <h3 id="conversationTitle">Conversation</h3>
+      <div class="chat-window" id="chatWindow"></div>
+
+      <div class="chat-input-area">
+        <input id="chatMessage" placeholder="Type a message..." />
+        <button id="btnSend" class="btn">Send</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="app.js"></script>
+  <script src="chat.js"></script>
+
+</body>
+</html>

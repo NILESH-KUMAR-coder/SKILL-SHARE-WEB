@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Skill Swap — Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Skill Swap</div>
+    <div class="actions">
+      <button id="themeToggle" class="btn small ghost">Theme</button>
+      <a href="dashboard.html" class="btn small">Dashboard</a>
+      <a href="index.html" class="btn small ghost">Logout</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="profile-header">
+        <img id="profileAvatar" class="avatar" src="https://via.placeholder.com/96" alt="avatar">
+        <div>
+          <h2 id="profileName">Name</h2>
+          <div class="small-muted" id="profileDisplay">Display Name</div>
+          <div class="small-muted" id="profileContact">Contact</div>
+        </div>
+      </div>
+
+      <p id="profileBio">Bio</p>
+    </section>
+
+    <section class="card">
+      <h2>Your Listings</h2>
+      <div id="profileListings"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

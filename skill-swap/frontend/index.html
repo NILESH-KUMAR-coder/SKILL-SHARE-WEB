@@ -1,0 +1,88 @@
+<!doctype html>
+<html data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>Skill Swap — Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 🌙 THEME TOPBAR -->
+  <header class="topbar">
+    <div class="brand">Skill Swap</div>
+    <div class="actions">
+      <button id="themeToggle" class="btn small ghost">Theme</button>
+    </div>
+  </header>
+
+  <div class="center">
+    <h1>Skill Swap</h1>
+
+    <div class="card auth-card">
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm" class="form">
+        <input id="login_username" placeholder="Username" required />
+        <input id="login_password" type="password" placeholder="Password" required />
+        <button type="submit" class="btn" id="btnLogin">Login</button>
+      </form>
+
+      <!-- REGISTER FORM -->
+      <form id="registerForm" class="form hidden">
+        <input id="reg_username" placeholder="Username" required />
+        <input id="reg_password" type="password" placeholder="Password" required />
+        <input id="reg_name" placeholder="Full Name" required />
+        <input id="reg_email" type="email" placeholder="Email" required />
+        <input id="reg_display_name" placeholder="Display Name (optional)" />
+        <input id="reg_contact" placeholder="Contact (email/phone)" />
+        <input id="reg_bio" placeholder="Bio (optional)" />
+        <button type="submit" class="btn" id="btnRegister">Register</button>
+      </form>
+    </div>
+
+    <p class="muted">After login you’ll be redirected to the dashboard.</p>
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- 🌙 Theme Toggle JS -->
+  <script>
+    // Load saved theme when page opens
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    // Enable theme toggle button
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  </script>
+
+  <script>
+    const tabLogin = document.getElementById("tabLogin");
+    const tabRegister = document.getElementById("tabRegister");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+
+    tabLogin.addEventListener("click", () => {
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+        tabLogin.classList.add("active");
+        tabRegister.classList.remove("active");
+    });
+
+    tabRegister.addEventListener("click", () => {
+        loginForm.classList.add("hidden");
+        registerForm.classList.remove("hidden");
+        tabLogin.classList.remove("active");
+        tabRegister.classList.add("active");
+    });
+  </script>
+</body>
+</html>

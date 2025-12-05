@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Skill Swap — Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Skill Swap</div>
+    <div class="actions">
+      <button id="themeToggle" class="btn small ghost">Theme</button>
+      <span id="loggedUser" class="muted"></span>
+      <button id="btnLogout" class="btn small">Logout</button>
+      <a href="listings.html" class="btn small ghost">Public Listings</a>
+      <a href="chat.html" class="btn small">Chat</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card section">
+      <h2>Create Listing</h2>
+      <form id="createListingForm">
+        <input id="title" placeholder="Title" required />
+        <input id="skillOffered" placeholder="Skill you offer" required />
+        <input id="skillNeeded" placeholder="Skill you want (optional)" />
+        <textarea id="description" placeholder="Short description"></textarea>
+        <input id="contact" placeholder="Contact (email/phone)" />
+        <div class="row">
+          <button type="submit" class="btn">Publish</button>
+          <button id="btnRefresh" type="button" class="btn ghost">Refresh</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card section">
+      <h2>Your Listings</h2>
+      <div id="myListings"></div>
+    </section>
+
+    <aside class="card">
+      <h3>Quick Search</h3>
+      <input id="matchSkill" placeholder="Skill to search" />
+      <button id="btnMatch" class="btn">Find</button>
+      <div id="matches"></div>
+      <hr/>
+      <h3>Profile</h3>
+      <a href="profile.html" class="btn small">View Profile</a>
+      <a href="profile_edit.html" class="btn small ghost">Edit Profile</a>
+    </aside>
+
+    <section class="card section">
+      <h2>Incoming Contact Requests</h2>
+      <div id="incomingRequests"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
