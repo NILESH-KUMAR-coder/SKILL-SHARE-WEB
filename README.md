@@ -71,7 +71,21 @@ npm install
 
 ## Configuration
 
-You may need to configure environment variables like the database URL, API keys, and storage paths in both the frontend and backend for local or production environments.
+This project uses environment variables for sensitive values.
+
+### Required Environment Variables
+
+Before running the backend, make sure the following environment variables are set:
+
+- **DB_PASSWORD** — Database password for MySQL/PostgreSQL
+- **JWT_SECRET** — Secret key used for signing JWT tokens
+
+Example (PowerShell on Windows):
+
+```powershell
+$env:DB_PASSWORD="your_database_password"
+$env:JWT_SECRET="your_jwt_secret"
+
 
 ## Contributing
 
