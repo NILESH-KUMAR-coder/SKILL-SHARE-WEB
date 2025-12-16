@@ -85,7 +85,7 @@ Example (PowerShell on Windows):
 ```powershell
 $env:DB_PASSWORD="your_database_password"
 $env:JWT_SECRET="your_jwt_secret"
-
+```
 
 ## Contributing
 
